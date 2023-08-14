@@ -75,9 +75,153 @@ select {
 }
 
 /* ========================= Custom Styles ========================= */
+/* ======== Variables ======= */
+
+:root {
+  --vry-lt-gray-blue: hsl(240, 78%, 98%);
+  --lt-gray-blue: hsl(234, 14%, 74%);
+  --gray-blue: hsl(233, 13%, 49%);
+  --drk-gray-blue: hsl(232, 13%, 33%);
+  --white: hsl(0, 0%, 100%);
+  --linear-gradient-1: hsl(236, 72%, 79%);
+  --linear-gradient-2: hsl(237, 63%, 64%);
+}
+
+/* ======== Base Styles ======= */
 body {
+  background-color: var(--vry-lt-gray-blue);
   font-family: "Montserrat", sans-serif;
 }
+
+main {
+  background-color: var(--vry-lt-gray-blue);
+}
+
+.background-top {
+  background-image: url("./images/bg-top.svg");
+}
+
+.background-bottom {
+  background-image: url("./images/bg-bottom.svg");
+}
+
+/* ======== Toggle Styles ======= */
+
+.toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-display {
+  --offset: 0.25rem;
+  --diameter: 1.8rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: content-box;
+  width: calc(var(--diameter) * 2 + var(--offset) * 2);
+  height: calc(var(--diameter) + var(--offset) * 2);
+
+  position: relative;
+  border-radius: 100vw;
+  background-image: linear-gradient(
+    to right,
+    var(--linear-gradient-1),
+    var(--linear-gradient-2)
+  );
+  transition: 250ms;
+}
+
+.toggle-display::before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: var(--offset);
+  box-sizing: border-box;
+  width: var(--diameter);
+  height: var(--diameter);
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(0, -50%);
+  will-change: transform;
+  transition: inherit;
+}
+
+/* ======== Price Card Styles ======= */
+.price-components-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.price-card {
+  display: flex;
+  flex-flow: column wrap;
+  color: var(--gray-blue);
+  border-radius: 10px;
+}
+
+.price {
+  color: var(--drk-gray-blue);
+}
+
+.professional .price {
+  color: var(--white);
+}
+
+.basic,
+.master {
+  background-color: var(--white);
+}
+
+.bg-purple-gradient {
+  color: var(--white);
+  background-image: linear-gradient(
+    to right,
+    var(--linear-gradient-1),
+    var(--linear-gradient-2)
+  );
+}
+
+.learn-more {
+  border-radius: 6px;
+  border: none;
+  background-color: var(--white);
+}
+
+/* ========== Footer ========== */
+
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: end;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+footer p {
+  color: var(--gray-blue);
+  font-size: 0.825rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--linear-gradient-2);
+}
+
 /* ========================= Media Queriers ========================= */
 /* tablet change at 640px */
 @media screen and (min-width: 40rem) {
