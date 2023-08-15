@@ -46,13 +46,13 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Made a checkbox toggle with a horizontal slider with CSS! Tried to make this as accessbile as possible, even used `will-change: transform;` on the toggle handle.
 
 ### Continued development
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Accessible Toggle](https://kittygiraudel.com/2021/04/05/an-accessible-toggle/) - Excellent article on how to build an accessible toggle from a checkbox.
 
 ## Author
 

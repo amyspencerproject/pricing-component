@@ -91,6 +91,8 @@ select {
 body {
   background-color: var(--vry-lt-gray-blue);
   font-family: "Montserrat", sans-serif;
+  color: var(--gray-blue);
+  font-size: 0.9375rem;
 }
 
 main {
@@ -107,12 +109,20 @@ main {
 
 /* ======== Toggle Styles ======= */
 
+.subscription-toggle {
+  color: var(--lt-gray-blue);
+}
+
+.subscription-toggle span {
+  margin: 1rem 0.5rem;
+}
+
 .toggle {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
@@ -123,9 +133,10 @@ main {
   height: 100%;
 }
 
+/* This is the container holding the white toggel handle */
 .toggle-display {
   --offset: 0.25rem;
-  --diameter: 1.8rem;
+  --diameter: 1.5rem;
 
   display: inline-flex;
   align-items: center;
@@ -144,6 +155,7 @@ main {
   transition: 250ms;
 }
 
+/* This is the white toggle handle */
 .toggle-display::before {
   content: "";
   z-index: 2;
@@ -160,22 +172,38 @@ main {
   transition: inherit;
 }
 
+.toggle-input:checked + .toggle-display::before {
+  transform: translate(100%, -50%);
+}
+
 /* ======== Price Card Styles ======= */
 .price-components-container {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  /* max-width: 23.4375rem; */
+}
+
+.price-header {
+  font-size: 2rem;
+  margin: 3rem;
 }
 
 .price-card {
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
   color: var(--gray-blue);
   border-radius: 10px;
+  width: 90%;
+  margin: 1rem 0.5rem;
+  padding-block-start: 1rem;
+  padding-block-end: 1rem;
 }
 
 .price {
   color: var(--drk-gray-blue);
+  font-size: 4.5rem;
 }
 
 .professional .price {
@@ -196,10 +224,54 @@ main {
   );
 }
 
-.learn-more {
+.plan-title {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.plan-list {
+  list-style-type: none;
+  padding: 0;
+  /* margin: 0; */
+}
+
+.plan-list-item {
+  border-bottom: 1px solid var(--lt-gray-blue);
+  padding: 1rem;
+}
+
+.plan-list-item:first-child {
+  border-top: 1px solid var(--lt-gray-blue);
+}
+
+.learn-more-purple {
+  background-image: linear-gradient(
+    to right,
+    var(--linear-gradient-1),
+    var(--linear-gradient-2)
+  );
+  color: var(--white);
+  padding: 0.5rem 8rem;
+  margin: 1.5rem 1rem;
+}
+
+.learn-more-white {
+  background-color: var(--white);
+  color: var(--linear-gradient-2);
+}
+
+.learn-more-purple,
+.learn-more-white {
   border-radius: 6px;
   border: none;
-  background-color: var(--white);
+  /* font-size: 0.8125rem; */
+  letter-spacing: 1.4px;
+  padding: 1rem 8rem;
+  margin: 1.5rem 1rem;
+}
+
+.hide {
+  display: none;
 }
 
 /* ========== Footer ========== */
